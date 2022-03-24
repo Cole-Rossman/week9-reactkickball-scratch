@@ -21,10 +21,10 @@ export default function Teams() {
   return (
     <div>
       <h1>Teams</h1>
+      {error && <p>{error}</p>}
       <ul className='team-list'>
-        {error && <p>{error}</p>}
         {teams.map((team) => (
-          <Link key={team.id} to={`./${team.id}`} >
+          <Link key={team.id} to={`/teams/${team.id}`} >
             <li key={team.id}>{team.name}</li>
           </Link>
         ))}
