@@ -10,7 +10,6 @@ export default function Teams() {
     const fetchData = async () => {
       try {
         const teamData = await fetchTeams();
-        console.log(teamData);
         setTeams(teamData);
       } catch (e) {
         setError(e.message);
