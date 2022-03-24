@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { fetchPlayersId } from '../../services/players';
 
 export default function PlayerDetail() {
@@ -13,7 +13,6 @@ export default function PlayerDetail() {
     const fetchData = async () => {
       try {
         const playerData = await fetchPlayersId(params.id);
-        console.log(playerData);
         setPlayer(playerData);
         setLoading(false);
       } catch (e) {
@@ -31,7 +30,7 @@ export default function PlayerDetail() {
       <h1>{player.name}</h1>
       <p>
         {player.position} for the {player.teams.name}
-      </p>
+      </p>  
     </div>
   );
 }

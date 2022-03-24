@@ -30,9 +30,8 @@ export default function TeamDetail() {
       <h1>{team.name}</h1>
       <h3>City: {team.city}</h3>
       {team.players.map((player) => (
-        <Link key={team.team_id} to={`/players/${player.id}`} >
-          <p key={player.id}>{player.name}</p>
-          
+        <Link key={player.id} to={`./players/${player.id}`} >
+          <p key={player.id}>{player.name}</p>  
         </Link>
       ))}
     </div>
