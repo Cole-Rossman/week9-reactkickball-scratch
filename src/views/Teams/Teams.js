@@ -9,8 +9,8 @@ export default function Teams() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const teamData = await fetchTeams();
-        setTeams(teamData);
+        const teamsData = await fetchTeams();
+        setTeams(teamsData);
       } catch (e) {
         setError(e.message);
       }
@@ -24,7 +24,7 @@ export default function Teams() {
       <ul className='team-list'>
         {error && <p>{error}</p>}
         {teams.map((team) => (
-          <Link key={team.id} to={`./teams/${team.id}`} >
+          <Link key={team.id} to={`./${team.id}`} >
             <li key={team.id}>{team.name}</li>
           </Link>
         ))}
