@@ -25,7 +25,7 @@ export default function Players() {
       {error && <p>{error}</p>}
       <ul className="players-list">
         {players.map((player) => (
-          <Link key={player.id} to={`./${player.id}`} >
+          <Link key={player.id} to={`/players/${player.id}`} >
             <li key={player.id}>{player.name}</li>
           </Link>
         ))}
